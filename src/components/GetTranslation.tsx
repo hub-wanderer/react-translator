@@ -37,11 +37,11 @@ export default function GetTranslation() {
 
   return (
     <>
-      <p>Ryan's translator</p>
+      <p>Инвенио Переводчик</p>
 
       <input
         type="text"
-        placeholder="Type a text to translate"
+        placeholder="Введите текст"
         onChange={(e) => {
           setPrevText(e.target.value);
         }}
