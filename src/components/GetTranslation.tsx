@@ -47,7 +47,7 @@ export default function GetTranslation() {
         }}
       />
       <button className="trans_button" onClick={fetchData}>
-        Translate
+        Перевести
       </button>
       <p>{translatedValue}</p>
     </>
