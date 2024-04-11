@@ -1,11 +1,11 @@
 import "./index.css";
-import { useState } from "react";
-import GetJoke from "./components/GetJoke";
-import PredictAge from "./components/GetPregictAge";
+// import { useState } from "react";
+// import GetJoke from "./components/GetJoke";
+// import PredictAge from "./components/GetPregictAge";
 import GetTranslation from "./components/GetTranslation";
 
 function App() {
-  const [joke, setJoke] = useState("");
+  // const [joke, setJoke] = useState("");
 
   return (
     <div className="wrapper">
