@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRef, useState } from "react";
 import Buttons from "./Buttons";
+import TextArea from "./TextArea";
 
 export default function GetTranslation() {
   const [prevText, setPrevText] = useState("");
@@ -43,25 +44,23 @@ export default function GetTranslation() {
   const handleLangChange = (e: any) => {
     setLang(e.target.value);
   };
+  const handleDelete = () => {
+    setTranslatedValue("");
+    setPrevText("");
+  };
 
   return (
     <>
       <p className="title">Инвенио Переводчик</p>
 
       <form action="">
-        <textarea
-          className="trans_input"
-          autoCorrect="on"
-          required
-          autoFocus
-          placeholder="Введите текст"
-          onChange={(e) => {
+        <TextArea
+          value={prevText}
+          oniClick={handleDelete}
+          onChange={(e: any) => {
             setPrevText(e.target.value);
           }}
         />
-        {/* <button className="trans_button" onClick={fetchData}>
-          Перевести
-        </button> */}
         <Buttons
           onChangeLang={handleLangChange}
           btn_value="Перевести"
@@ -73,7 +72,6 @@ export default function GetTranslation() {
         ref={() => textareaRef}
         className="translated_value"
         disabled
-        id="translated_field"
         placeholder="Перевод"
       ></textarea>
     </>

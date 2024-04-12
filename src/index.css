@@ -99,9 +99,6 @@ textarea:hover {
   color: #fff;
 }
 
-.trans_input {
-}
-
 .button_wrapper {
   display: flex;
   gap: 9px;
@@ -122,6 +119,23 @@ textarea:hover {
 }
 .button_wrapper button {
   width: 80%;
+}
+
+.input_wrapper {
+  display: inline-block;
+  position: relative;
+}
+.input_wrapper .trans_input {
+  position: relative;
+  width: 96%;
+}
+.input_wrapper i {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.3em;
+  cursor: pointer;
+  z-index: 10;
 }
 
 @media (prefers-color-scheme: light) {
