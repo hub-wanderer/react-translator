@@ -70,27 +70,6 @@ form {
   justify-content: center;
 }
 
-textarea {
-  font-family: inherit;
-  font-size: 16px;
-  border-radius: 13px;
-  border: none;
-  padding: 21px 16px 21px 16px;
-  overflow-x: hidden;
-  background-color: #1a1a1a;
-  transition: 0.2s ease all;
-  resize: none;
-}
-textarea:focus {
-  border: 1.3px solid #00afff;
-  outline: none;
-  background: transparent;
-}
-textarea:hover {
-  border: 0.8px solid #aaaaaa;
-  outline: none;
-}
-
 .trans_button {
   margin-top: 10px;
 }
@@ -122,20 +101,64 @@ textarea:hover {
 }
 
 .input_wrapper {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   position: relative;
+  width: 50%;
 }
 .input_wrapper .trans_input {
   position: relative;
-  width: 96%;
+  width: 90%;
+  height: fit-content;
+  margin-top: 10px;
 }
 .input_wrapper i {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 1.3em;
+  font-size: 1.35em;
   cursor: pointer;
   z-index: 10;
+  padding: 3px 3px 3px 3px;
+}
+.input_wrapper .clear_icon {
+  transition: 0.2s all;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+.input_wrapper .clear_icon:hover {
+  background-color: #80808056;
+}
+textarea {
+  font-family: inherit;
+  font-size: 16px;
+  min-height: 97px;
+  border-radius: 13px;
+  border: none;
+  padding: 21px 16px 21px 16px;
+  overflow-x: hidden;
+  background-color: #1a1a1a;
+  transition: 0.2s ease all;
+  resize: none;
+  width: 50%;
+}
+textarea:focus {
+  border: 1.3px solid #00afff;
+  outline: none;
+  background: transparent;
+}
+textarea:hover {
+  border: 0.8px solid #aaaaaa;
+  outline: none;
+}
+
+.textarea_wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
 }
 
 @media (prefers-color-scheme: light) {

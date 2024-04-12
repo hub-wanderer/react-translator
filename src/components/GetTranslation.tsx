@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import Buttons from "./Buttons";
 import TextArea from "./TextArea";
+import TextAreaWrapper from "./TextAreaWrapper";
 
 export default function GetTranslation() {
   const [prevText, setPrevText] = useState("");
@@ -52,8 +53,12 @@ export default function GetTranslation() {
   return (
     <>
       <p className="title">Инвенио Переводчик</p>
-
-      <form action="">
+      <Buttons
+        onChangeLang={handleLangChange}
+        btn_value="Перевести"
+        onFetchData={fetchData}
+      />
+      <TextAreaWrapper>
         <TextArea
           value={prevText}
           oniClick={handleDelete}
@@ -61,19 +66,14 @@ export default function GetTranslation() {
             setPrevText(e.target.value);
           }}
         />
-        <Buttons
-          onChangeLang={handleLangChange}
-          btn_value="Перевести"
-          onFetchData={fetchData}
-        />
-      </form>
-      <textarea
-        value={translatedValue}
-        ref={() => textareaRef}
-        className="translated_value"
-        disabled
-        placeholder="Перевод"
-      ></textarea>
+        <textarea
+          value={translatedValue}
+          ref={() => textareaRef}
+          className="translated_value"
+          disabled
+          placeholder="Перевод"
+        ></textarea>
+      </TextAreaWrapper>
     </>
   );
 }

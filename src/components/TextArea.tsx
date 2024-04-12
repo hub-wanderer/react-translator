@@ -1,6 +1,6 @@
 interface Props {
-  onChange: any;
-  oniClick: () => void;
+  onChange?: any;
+  oniClick?: () => void;
   value: any;
 }
 
@@ -16,7 +16,9 @@ export default function TextArea(props: Props) {
         onChange={props.onChange}
         value={props.value}
       ></textarea>
-      <i onClick={props.oniClick} className="fa-solid fa-xmark"></i>
+      <span className="clear_icon">
+        <i onClick={props.oniClick} className="fa-solid fa-xmark"></i>
+      </span>
     </div>
   );
 }
