@@ -1,17 +1,23 @@
 import axios from "axios";
-import { useState } from "react";
+import React from "react";
+import { useRef, useState } from "react";
+import Buttons from "./Buttons";
 
 export default function GetTranslation() {
   const [prevText, setPrevText] = useState("");
   const [translatedValue, setTranslatedValue] = useState("");
+  const [lang, setLang] = useState("");
 
-  const fetchData = async () => {
+  const textareaRef = useRef("");
+
+  const fetchData = async (e: any) => {
+    e.preventDefault();
     const options = {
       method: "POST",
       url: "https://microsoft-translator-text.p.rapidapi.com/translate",
       params: {
         "api-version": "3.0",
-        "to[0]": "ru",
+        "to[0]": lang || "ru",
         textType: "plain",
         profanityAction: "NoAction",
       },
@@ -35,21 +41,42 @@ export default function GetTranslation() {
     }
   };
 
+  const handleLangChange = (e: any) => {
+    setLang(e.target.value);
+  };
+
   return (
     <>
-      <p>Инвенио Переводчик</p>
+      <p className="title">Инвенио Переводчик</p>
 
-      <input
-        type="text"
-        placeholder="Введите текст"
-        onChange={(e) => {
-          setPrevText(e.target.value);
-        }}
-      />
-      <button className="trans_button" onClick={fetchData}>
-        Перевести
-      </button>
-      <p>{translatedValue}</p>
+      <form action="">
+        <textarea
+          className="trans_input"
+          autoCorrect="on"
+          required
+          autoFocus
+          placeholder="Введите текст"
+          onChange={(e) => {
+            setPrevText(e.target.value);
+          }}
+        />
+        {/* <button className="trans_button" onClick={fetchData}>
+          Перевести
+        </button> */}
+        <Buttons
+          onChangeLang={handleLangChange}
+          btn_value="Перевести"
+          onFetchData={fetchData}
+        />
+      </form>
+      <textarea
+        value={translatedValue}
+        ref={() => textareaRef}
+        className="translated_value"
+        disabled
+        id="translated_field"
+        placeholder="Перевод"
+      ></textarea>
     </>
   );
 }

@@ -54,36 +54,74 @@ button:focus-visible {
 .wrapper {
   display: flex;
   height: 100dvh;
-  align-items: center;
-  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-input {
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
   font-family: inherit;
   font-size: 16px;
   border-radius: 13px;
   border: none;
   padding: 21px 16px 21px 16px;
-  width: 70%;
+  overflow-x: hidden;
   background-color: #1a1a1a;
   transition: 0.2s ease all;
   resize: none;
-  text-indent: 0px;
 }
-input:focus {
+textarea:focus {
   border: 1.3px solid #00afff;
   outline: none;
   background: transparent;
 }
-input:hover {
+textarea:hover {
   border: 0.8px solid #aaaaaa;
   outline: none;
 }
 
 .trans_button {
   margin-top: 10px;
+}
+.translated_value {
+  margin-top: 10px;
+  color: #fff;
+}
+
+.trans_input {
+}
+
+.button_wrapper {
+  display: flex;
+  gap: 9px;
+}
+
+.button_wrapper select {
+  width: 20%;
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fff;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.button_wrapper select:hover {
+  border-color: #646cff;
+}
+.button_wrapper button {
+  width: 80%;
 }
 
 @media (prefers-color-scheme: light) {
