@@ -1,4 +1,5 @@
 interface Props {
+  onInput?: any;
   onChange?: any;
   oniClick?: () => void;
   value: any;
@@ -13,6 +14,7 @@ export default function TextArea(props: Props) {
         autoFocus
         placeholder="Введите текст"
         className="trans_input"
+        onInput={props.onInput}
         onChange={props.onChange}
         value={props.value}
       ></textarea>

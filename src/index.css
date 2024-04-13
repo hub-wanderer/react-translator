@@ -80,15 +80,16 @@ form {
 
 .button_wrapper {
   display: flex;
-  gap: 9px;
+  width: 67%;
+  justify-content: space-between;
 }
 
 .button_wrapper select {
-  width: 20%;
+  width: 148px;
   background-color: #1a1a1a;
   border-color: #1a1a1a;
   color: #fff;
-  margin-top: 10px;
+  height: 49px;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;

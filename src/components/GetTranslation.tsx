@@ -62,9 +62,10 @@ export default function GetTranslation() {
         <TextArea
           value={prevText}
           oniClick={handleDelete}
-          onChange={(e: any) => {
+          onInput={(e: any) => {
             setPrevText(e.target.value);
           }}
+          onChange={fetchData}
         />
         <textarea
           value={translatedValue}
